@@ -18,7 +18,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="MediaMount" >
-                <param name="android-package" value="com.caaboos.mediamount" />
+                <param name="android-package" value="com.caaboos.mediamount.MediaMount" />
             </feature>
         </config-file>
 
