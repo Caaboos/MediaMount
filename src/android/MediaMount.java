@@ -1,5 +1,5 @@
 package com.caaboos.mediamount;
-
+ 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONObject;
@@ -11,12 +11,11 @@ import android.content.Intent;
 
 public class MediaMount extends CordovaPlugin {
     public static final String ACTION_ADD_CALENDAR_ENTRY = "addCalendarEntry";
-
+    
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        return false;
         try {
-            if (ACTION_ADD_CALENDAR_ENTRY.equals(action)) {
+            if (ACTION_ADD_CALENDAR_ENTRY.equals(action)) { 
                 JSONObject arg_object = args.getJSONObject(0);
                 Intent calIntent = new Intent(Intent.ACTION_EDIT)
                     .setType("vnd.android.cursor.item/event")
@@ -25,7 +24,7 @@ public class MediaMount extends CordovaPlugin {
                     .putExtra("title", arg_object.getString("title"))
                     .putExtra("description", arg_object.getString("description"))
                     .putExtra("eventLocation", arg_object.getString("eventLocation"));
-
+             
                this.cordova.getActivity().startActivity(calIntent);
                callbackContext.success();
                return true;
@@ -36,6 +35,6 @@ public class MediaMount extends CordovaPlugin {
             System.err.println("Exception: " + e.getMessage());
             callbackContext.error(e.getMessage());
             return false;
-        }
+        } 
     }
 }

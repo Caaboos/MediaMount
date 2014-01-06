@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.caaboos.mediamount" version="3.0.0">
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.caaboos.mediamount"
+        version="0.1.0">
     <name>MediaMount</name>
-    <description>Update android gallery</description>
+    <description>Update Android gallery</description>
     <license>MIT</license>
-    <keywords>android</keywords>
+    <keywords>phonegap,android</keywords>
 
-    <engines>
-        <engine name="cordova" version=">=3.0.0" />
-    </engines>
 
     <js-module src="www/mediamount.js" name="MediaMount">
-        <clobbers target="window.mediamount" />
+        <clobbers target="window.mediamount"/>
     </js-module>
 
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="MediaMount" >
-                <param name="android-package" value="com.caaboos.mediamount.MediaMount" />
+            <feature name="MediaMount">
+                <param name="android-package" value="com.caaboos.mediamount.MediaMount"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/MediaMount.java" target-dir="src/com/caaboos/mediamount" />
+        <source-file src="src/android/MediaMount.java" target-dir="src/com/caaboos/mediamount"/>
     </platform>
-
 </plugin>
