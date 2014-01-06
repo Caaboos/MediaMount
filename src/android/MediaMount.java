@@ -9,7 +9,7 @@ import org.json.JSONException;
 import android.content.Intent;
 import android.os.Environment;
 import android.net.Uri;
-//import android.media.MediaScannerConnection;
+import android.media.MediaScannerConnection;
 
 public class MediaMount extends CordovaPlugin {
     public static final String UPDATE = "update";
