@@ -18,9 +18,10 @@ public class MediaMount extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         try {
             JSONObject arg_object = args.getJSONObject(0);
+            String filePath = arg_object.has("file") ? arg_object.getString("file") : '';
 
             if (UPDATE.equals(action)) {
-              String path = obj.has("file") ? obj.getString("file") : '';
+
               //MediaScannerConnection.scanFile(path);
             }
 
