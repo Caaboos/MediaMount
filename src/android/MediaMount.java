@@ -9,6 +9,7 @@ import org.json.JSONException;
 import android.content.Intent;
 import android.os.Environment;
 import android.net.Uri;
+android.media.MediaScannerConnection;
 
 public class MediaMount extends CordovaPlugin {
     public static final String UPDATE = "update";
@@ -16,11 +17,11 @@ public class MediaMount extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         try {
-            if (UPDATE.equals(action)) {
-                this.cordova.getActivity().sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory())));
+            JSONObject obj = args.getJSONObject(0);
 
-               callbackContext.success();
-               return true;
+            if (UPDATE.equals(action)) {
+              String path = obj.has("path") ? obj.getString("path") : null;
+              MediaScannerConnection.scanFile(path);
             }
 
             callbackContext.error("Invalid action");
