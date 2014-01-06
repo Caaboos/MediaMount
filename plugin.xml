@@ -10,7 +10,7 @@
 
 
     <js-module src="www/mediamount.js" name="MediaMount">
-        <clobbers target="window.mediamount"/>
+        <clobbers target="window.mediaMount"/>
     </js-module>
 
     <!-- android -->
