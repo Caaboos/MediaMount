@@ -1,4 +1,4 @@
-var MediaMount = {};
+var MediaMount = function() {};
 MediaMount.prototype.update = function(successCallback, errorCallback) {
 	cordova.exec(
 		successCallback, // success callback function
@@ -8,8 +8,10 @@ MediaMount.prototype.update = function(successCallback, errorCallback) {
 	);
 };
 
-cordova.addConstructor(function() {
+MediaMount.install = function() {
 	window.mediaMount = new MediaMount();
 	return window.mediaMount;
-});
+};
+
+cordova.addConstructor(MediaMount.install);
 
