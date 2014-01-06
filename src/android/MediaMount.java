@@ -20,8 +20,8 @@ public class MediaMount extends CordovaPlugin {
             JSONObject obj = args.getJSONObject(0);
 
             if (UPDATE.equals(action)) {
-              String path = obj.has("path") ? obj.getString("path") : null;
-              MediaScannerConnection.scanFile(path);
+              String path = obj.has("path") ? obj.getString("path") : '';
+              //MediaScannerConnection.scanFile(path);
             }
 
             callbackContext.error("Invalid action");
