@@ -21,7 +21,14 @@ public class MediaMount extends CordovaPlugin {
             String filePath = arg_object.getString("file");
 
             if (UPDATE.equals(action)) {
-              MediaScannerConnection.scanFile(filePath);
+              MediaScannerConnection.scanFile(this, new String[] {filePath}, new  MediaScannerConnection.OnScanCompletedListener() {
+                                                                                             public  void  onScanCompleted(String path, Uri uri) {
+                                                                                             } );
+              /*
+
+              scanFile(Context context, String[] paths, String[] mimeTypes, MediaScannerConnection.OnScanCompletedListener callback)
+              Convenience for constructing a MediaScannerConnection, calling connect() on it, and calling scanFile(Context, String[], String[], MediaScannerConnection.OnScanCompletedListener) with the given path and mimeType when the connection is established.
+              */
             }
 
             callbackContext.error("Invalid action");
