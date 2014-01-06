@@ -15,17 +15,14 @@ public class MediaMount extends CordovaPlugin {
     
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        callbackContext.success();
         try {
             if (UPDATE.equals(action)) {
-                callbackContext.success();
-                //sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory())));
-
                 this.cordova.getActivity().sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory())));
 
                callbackContext.success();
                return true;
             }
+
             callbackContext.error("Invalid action");
             return false;
         } catch(Exception e) {
