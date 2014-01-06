@@ -9,7 +9,7 @@ import org.json.JSONException;
 import android.content.Intent;
 import android.os.Environment;
 import android.net.Uri;
-import android.media.MediaScannerConnection;
+//import android.media.MediaScannerConnection;
 
 public class MediaMount extends CordovaPlugin {
     public static final String UPDATE = "update";
@@ -20,7 +20,7 @@ public class MediaMount extends CordovaPlugin {
             JSONObject obj = args.getJSONObject(0);
 
             if (UPDATE.equals(action)) {
-              String path = obj.has("path") ? obj.getString("path") : '';
+              //String path = obj.has("path") ? obj.getString("path") : '';
               //MediaScannerConnection.scanFile(path);
             }
 
