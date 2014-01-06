@@ -21,8 +21,7 @@ public class MediaMount extends CordovaPlugin {
             String filePath = arg_object.getString("file");
 
             if (UPDATE.equals(action)) {
-
-              //MediaScannerConnection.scanFile(path);
+              MediaScannerConnection.scanFile(filePath);
             }
 
             callbackContext.error("Invalid action");
